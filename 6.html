@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: #b0ff70;
+      }
+
+      #dropdown-btn {
+        padding: 4px 10px;
+        background-color: white;
+        border: 1px;
+        border-style: solid;
+        border-color: rgba(171, 171, 171, 0.4);
+        border-radius: 5px;
+      }
+
+      #dropdown {
+        display: none;
+        position: relative;
+      }
+      #dropdown > ul {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(3px);
+        padding: 5px;
+        margin-top: 2px;
+        list-style: none;
+        border: 1px;
+        border-style: solid;
+        border-color: rgba(171, 171, 171, 0.4);
+        border-radius: 5px;
+      }
+
+      #dropdown > ul > li {
+        padding: 5px 10px;
+      }
+
+      #dropdown > ul > li > a {
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="dropdown-btn">Menu</button>
+    <div id="dropdown">
+      <ul>
+        <li><a href="#">Lien 1</a></li>
+        <li><a href="#">Lien 2</a></li>
+        <li><a href="#">Lien 3</a></li>
+      </ul>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita animi
+      aperiam vel quae, architecto vitae reprehenderit blanditiis laboriosam
+      officiis modi ratione ipsum voluptatem corrupti quibusdam nisi! Quos
+      repellat atque explicabo.
+    </p>
+
+    <script>
+      const btn = document.querySelector("#dropdown-btn");
+      const dropdown = document.querySelector("#dropdown");
+
+      let isOpen = false;
+
+      btn.addEventListener("click", function () {
+        if (isOpen) {
+          dropdown.style.display = "none";
+        } else {
+          dropdown.style.display = "block";
+        }
+
+        isOpen = !isOpen;
+      });
+    </script>
+  </body>
+</html>
