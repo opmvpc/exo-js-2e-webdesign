@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 100%;
+        cursor: pointer;
+      }
+
+      .accordion-content {
+        height: 0px;
+        overflow: hidden;
+        transition: ease 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="london">London</button>
+      <div class="accordion-content" id="div-london">
+        London Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+        excepturi dignissimos ad impedit incidunt tenetur laboriosam ipsa soluta
+        laudantium! Nostrum nisi quo nesciunt dolorem minus tenetur ea ut at
+        iusto?
+      </div>
+    </div>
+
+    <div>
+      <button id="paris">Paris</button>
+      <div class="accordion-content" id="div-paris">
+        Paris Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+        nulla asperiores, id officia, corporis reprehenderit maxime dolorem
+        numquam voluptatem quidem provident vel, impedit sapiente distinctio
+        doloremque necessitatibus nesciunt cumque blanditiis.
+      </div>
+    </div>
+
+    <div>
+      <button id="tokyo">Tokyo</button>
+      <div class="accordion-content" id="div-tokyo">
+        Tokyo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+        nulla asperiores, id officia, corporis reprehenderit maxime dolorem
+        numquam voluptatem quidem provident vel, impedit sapiente distinctio
+        doloremque necessitatibus nesciunt cumque blanditiis.
+      </div>
+    </div>
+
+    <script>
+      const btnLondon = document.querySelector("#london");
+      const btnParis = document.querySelector("#paris");
+      const btnTokyo = document.querySelector("#tokyo");
+
+      const divLondon = document.querySelector("#div-london");
+      const divParis = document.querySelector("#div-paris");
+      const divTokyo = document.querySelector("#div-tokyo");
+
+      divLondon.style.height = "100px";
+      marquerActive(btnLondon);
+
+      btnLondon.addEventListener("click", function () {
+        cacherLesDivs();
+        marquerActive(btnLondon);
+        divLondon.style.height = "100px";
+      });
+
+      btnParis.addEventListener("click", function () {
+        cacherLesDivs();
+        marquerActive(btnParis);
+        divParis.style.height = "100px";
+      });
+
+      btnTokyo.addEventListener("click", function () {
+        cacherLesDivs();
+        marquerActive(btnTokyo);
+        divTokyo.style.height = "100px";
+      });
+
+      function cacherLesDivs() {
+        divLondon.style.height = "0px";
+        divParis.style.height = "0px";
+        divTokyo.style.height = "0px";
+
+        btnLondon.style.backgroundColor = "#F0F0F0";
+        btnParis.style.backgroundColor = "#F0F0F0";
+        btnTokyo.style.backgroundColor = "#F0F0F0";
+      }
+
+      function marquerActive(div) {
+        div.style.backgroundColor = "yellow";
+      }
+    </script>
+  </body>
+</html>
