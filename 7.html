@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="london">London</button>
+    <button id="paris">Paris</button>
+    <button id="tokyo">Tokyo</button>
+    <div id="div-london">
+      London Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+      excepturi dignissimos ad impedit incidunt tenetur laboriosam ipsa soluta
+      laudantium! Nostrum nisi quo nesciunt dolorem minus tenetur ea ut at
+      iusto?
+    </div>
+    <div id="div-paris">
+      Paris Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+      nulla asperiores, id officia, corporis reprehenderit maxime dolorem
+      numquam voluptatem quidem provident vel, impedit sapiente distinctio
+      doloremque necessitatibus nesciunt cumque blanditiis.
+    </div>
+    <div id="div-tokyo">
+      Tokyo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+      nulla asperiores, id officia, corporis reprehenderit maxime dolorem
+      numquam voluptatem quidem provident vel, impedit sapiente distinctio
+      doloremque necessitatibus nesciunt cumque blanditiis.
+    </div>
+
+    <script>
+      const btnLondon = document.querySelector("#london");
+      const btnParis = document.querySelector("#paris");
+      const btnTokyo = document.querySelector("#tokyo");
+
+      const divLondon = document.querySelector("#div-london");
+      const divParis = document.querySelector("#div-paris");
+      const divTokyo = document.querySelector("#div-tokyo");
+
+      divParis.style.display = "none";
+      divTokyo.style.display = "none";
+      marquerActive(btnLondon);
+
+      btnLondon.addEventListener("click", function () {
+        cacherLesDivs();
+        marquerActive(btnLondon);
+        divLondon.style.display = "block";
+      });
+
+      btnParis.addEventListener("click", function () {
+        cacherLesDivs();
+        marquerActive(btnParis);
+        divParis.style.display = "block";
+      });
+
+      btnTokyo.addEventListener("click", function () {
+        cacherLesDivs();
+        marquerActive(btnTokyo);
+        divTokyo.style.display = "block";
+      });
+
+      function cacherLesDivs() {
+        divLondon.style.display = "none";
+        divParis.style.display = "none";
+        divTokyo.style.display = "none";
+
+        btnLondon.style.backgroundColor = "#F0F0F0";
+        btnParis.style.backgroundColor = "#F0F0F0";
+        btnTokyo.style.backgroundColor = "#F0F0F0";
+      }
+
+      function marquerActive(div) {
+        div.style.backgroundColor = "yellow";
+      }
+    </script>
+  </body>
+</html>
