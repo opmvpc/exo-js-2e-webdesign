@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100dvh;
+            background-color: #ededed;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0;
+            background-color: white;
+            border-bottom: 4px solid #8521ff;
+        }
+
+        nav #menu-bar {
+            padding: 10px 15px;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav #menu-bar button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav ul {
+            flex-direction: column;
+            list-style: none;
+            margin: 0;
+            padding: 10px 0 10px 0;
+            display: none;
+            border-top: 4px solid #8521ff;
+        }
+
+        nav ul li {
+            padding: 5px 15px;
+            font-size: 0.8em;
+        }
+
+        section {
+            padding: 0 15px;
+        }
+
+        @media screen and (min-width:768px) {
+            nav {
+                flex-direction: row;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                border-top: none;
+            }
+
+            nav button {
+                display: none;
+            }
+
+            nav ul li {}
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <div id="menu-bar">
+            <div>Mon Site</div>
+            <button><i class="ri-menu-line"></i></button>
+        </div>
+
+        <ul>
+            <li>Home</li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>Home</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quam? Praesentium voluptas sed
+            natus culpa ullam provident sapiente similique ducimus, ipsum cupiditate ratione in perferendis alias, autem
+            ea corporis doloribus.</p>
+    </section>
+
+    <script>
+        const responsiveMenu = document.querySelector("nav ul");
+        const btnResponsive = document.querySelector("#menu-bar button");
+        let isResponsiveMenuOpen = false;
+        const btnResponsiveIcon = btnResponsive.querySelector("i")
+
+        btnResponsive.addEventListener("click", function () {
+            if (isResponsiveMenuOpen) {
+                responsiveMenu.style.display = "none"
+                btnResponsiveIcon.className = "ri-menu-line"
+            } else {
+                responsiveMenu.style.display = "flex"
+                btnResponsiveIcon.className = "ri-close-line"
+
+            }
+
+            isResponsiveMenuOpen = !isResponsiveMenuOpen
+        })
+    </script>
+</body>
+
+</html>
