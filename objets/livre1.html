@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="livre">
+
+    </div>
+    <script>
+        const livreDiv = document.querySelector("#livre")
+
+        const livre = {
+            titre: "Dune",
+            auteur: "Frank Herbert",
+            nbrDePages: 751,
+            afficher: function () {
+                livreDiv.innerHTML = `
+                    <p>Titre : ${livre.titre}</p>
+                    <p>Auteur : ${livre.auteur}</p>
+                    <p>Nombre de pages : ${livre.nbrDePages}</p>
+                    `
+            }
+        }
+
+        console.log(livre);
+
+        livre.afficher()
+
+    </script>
+</body>
+
+</html>
